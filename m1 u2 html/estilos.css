@@ -1,0 +1,167 @@
+p {
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: initial;
+    
+
+}
+
+.centrado {
+    text-shadow: 47px 32px 3px rgba(0, 151, 54, 0.6);
+    background: #0003ff;
+background: radial-gradient(ellipse farthest-side at center center, #0003ff 33%, #ffff00 66%, #0013ff 99%);
+background: -webkit-radial-gradient(ellipse farthest-side at center center, #0003ff 33%, #ffff00 66%, #0013ff 99%);
+background: -moz-radial-gradient(ellipse farthest-side at center center, #0003ff 33%, #ffff00 66%, #0013ff 99%);
+margin-left: 500px;
+margin-right: 500px;
+border-radius: 101px 100px 0px 0px;
+-webkit-border-radius: 101px 100px 0px 0px;
+-moz-border-radius: 101px 100px 0px 0px;
+}
+
+.testeada {
+    color: red;
+}
+
+.test1 h3 {
+    color: blueviolet;
+}
+
+h3 {
+    color: orange;
+}
+
+li {
+    color: rgb(57, 165, 75);
+}
+
+.olred li {
+    color: rgb(28, 102, 102);
+}
+
+.contenedor {
+    box-shadow: 53px 57px 5px 0px rgba(228, 14, 199, 0.75);
+    -webkit-box-shadow: 53px 57px 5px 0px rgba(92, 26, 179, 0.75);
+    -moz-box-shadow: 53px 57px 5px 0px rgba(17, 148, 28, 0.75);
+    text-align: center;
+    border: 34px outset #ff6550;
+    background: #000000;
+    margin-left: 830px;
+    margin-right: 650px;
+}
+
+p {
+    align-items: center;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.centradoh3 {
+    text-align: center;
+
+}
+
+
+.colorpri h2 {
+    color: rgb(15, 84, 145);
+    text-decoration: underline;
+}
+
+h1 {
+    color: rgb(8, 8, 8);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+
+}
+
+body {
+    background-image: url(https://i.imgur.com/R5yFytE.jpeg); /* Tu imagen de pared de ladrillos */
+    background-size: cover; /* Para que ocupe toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Para que el fondo quede fijo al hacer scroll */
+    color: white; /* Color de texto para que se vea bien sobre la imagen */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra al texto para mejor visibilidad */
+    font-family: Arial, sans-serif; /* Una fuente linda y limpia */
+    margin: 0;
+    padding: 20px;
+}
+
+#prueba {
+    color: blue;
+    font-size: 22;
+    text-decoration: underline;
+
+}
+
+.bgcolor {
+    background-color: bisque;
+
+}
+
+.pcenter {
+    text-align: center;
+}
+
+body {
+
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: left;
+}
+
+
+
+.contenedor1 {
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 53px 57px 5px 0px rgba(0, 0, 0, 0.75);
+    text-align: center;
+
+}
+
+.contenedor2 {
+
+    box-shadow: 53px 57px 5px 0px rgba(228, 14, 199, 0.75);
+    -webkit-box-shadow: 53px 57px 5px 0px rgba(92, 26, 179, 0.75);
+    -moz-box-shadow: 53px 57px 5px 0px rgba(17, 148, 28, 0.75);
+    text-align: center;
+    border: 34px outset #ff6550;
+    background: #000000;
+    margin-left: 820px;
+    margin-right: 650px;
+    cursor: pointer;
+    border-radius: 106px 106px 106px 106px;
+    -webkit-border-radius: 106px 106px 106px 106px;
+    -moz-border-radius: 106px 106px 106px 106px;
+    border: 39px outset #ff6550;
+}
+
+.caja {
+
+    text-align: center;
+    cursor: pointer;
+
+
+}
+.contenedor3{
+    filter: grayscale(100%) invert(100%);
+    -webkit-filter: grayscale(100%) invert(100%);
+    -moz-filter: grayscale(100%) invert(100%);
+    box-shadow: 53px 57px 5px 0px rgba(228, 14, 199, 0.75);
+    -webkit-box-shadow: 53px 57px 5px 0px rgba(92, 26, 179, 0.75);
+    -moz-box-shadow: 53px 57px 5px 0px rgba(17, 148, 28, 0.75);
+    text-align: center;
+    border: 34px outset #ff6550;
+    background: #000000;
+    margin-left: 820px;
+    margin-right: 650px;
+    text-align: center; 
+}
+.imgstilos{
+    margin-right: 200px;
+}
