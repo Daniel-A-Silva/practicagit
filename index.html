@@ -1,96 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Ejemplo con JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica cv</title>
+    <link rel="stylesheet" href="m1u2html/estilos.css">
+    <script type="text/javascript">
+        alert ("mensaje de prueba")
+    </script>
+    <style>
+        .centrado {
+            text-align: center;
+            margin-top: 10px;
+            
+        }
+
+        h1 {
+            text-decoration: underline;
+
+
+        }
+        
+        
+    </style>
 </head>
 
 <body>
-  <h1>Hola bienvenido/a 👋</h1>
+    <script src="pruebajs.html"></script>
+    <div class="centrado">
+        <h1>Daniel Silva</h1>
+    </div>
 
-  <script>
-    const nombre = 'daniel';
-    const edad = "39";
-    const altura = "169cms";
-    let casado = "false";
+       <div class="imgstilos"> <img src="https://i.imgur.com/DBKW46q.png" alt="Ups la imagen no se pudo cargar" width="250"
+            style=" float: right ;"></div>
 
+    
+    <!-- probando comentarios.-->
 
-    console.log(nombre);
-    console.log(`mi nombre es  ${nombre} tengo ${edad} años, tengo una estatura de ${altura}`)
-    const medios = ["a pie", "en bici", "en colectivo", "en auto", "en avion"];
-    const nombre1 = prompt('ingrese su nombre');
+    <div class="testeada">
+        <h2>Curriculum Vitae
+            <svg width="300" height="100">
+                <circle cx="10" cy="90" r="10" stroke="blue" stroke width="4" fill="orange" />
+            </svg>
+        </h2>
+    </div>
+    <div class="colorpri">
+        <h2>Direccion: Ingeniero Huergo 869 Villa de Mayo </h2>
+    </div>
+    <h3>Perfil profesional</h3>
+    <p>Soy una persona proactiva, con ganas de aprender y crecer profesionalmente.</p>
+    <h3>Educacion</h3>
+    <p>Titulo secundario obtenido en la escuela media numero 6 de Villa de Mayo.</p>
+    <p>Titulo obtenido: Tecnico personal y profesional en computación</p>
+    <h3>Experiencia laboral</h3>
+    <p>Toyota Argentina S.A.</p>
+    <p>Operario de línea de producción en Toyota Argentina - 2017 a la actualidad</p>
+    <div class="test1">
+        <h3>Habilidades</h3>
+    </div>
 
+    <ul>
+        <li>Trabajo en equipo</li>
+        <li>Manejo de Microsoft Office</li>
+        <li>Programacion en JAVA</li>
 
-
-    const edad1 = prompt('ingrese su edad');
-
-    console.log(nombre1);
-    document.writeln(`hola ${nombre1} asi que tienes ${edad1} años! <br><br>`)
-
-    const distancia = parseInt(prompt(`Ingrese la distancia en metros que desea recorrer:`))
-
-
-    if (distancia <= 999) {
-      console.log(`${nombre1} debes dirigirte a tu destino ${medios[0]}`);
-      document.write(`${nombre1} ingresaste ${distancia}mts, debes dirigirte a tu destino ${medios[0]}`);
-    }
-    else if (distancia <= 9999) {
-      console.log(`${nombre1} debes dirigirte a tu destino ${medios[1]}`);
-      document.write(`${nombre1} ingresaste ${distancia}mts, debes dirigirte a tu destino ${medios[1]}`);
-    }
-    else if (distancia <= 29999) {
-      console.log(`${nombre1} debes dirigirte a tu destino ${medios[2]}`);
-      document.write(`${nombre1} ingresaste ${distancia}mts, debes dirigirte a tu destino ${medios[2]}`);
-    }
-    else if (distancia <= 999999) {
-      console.log(`${nombre1} debes dirigirte a tu destino ${medios[3]}`);
-      document.write(`${nombre1} ingresaste ${distancia}mts, debes dirigirte a tu destino ${medios[3]}`);
-    }
-    else if (distancia >= 1000000) {
-      console.log(`${nombre1} debes dirigirte a tu destino ${medios[4]}`);
-      document.write(`${nombre1} ingresaste ${distancia}mts, debes dirigirte a tu destino ${medios[4]}`);
-    }
-    else {
-      console.log(`"los datos ingresados no son validos"`);
-      document.write(`"los datos ingresados no son validos, ingresaste ${distancia}"`);
-    }
-
-    // === Búsqueda del número mayor en un array ===
-    const numeros = [10, 25, 67, 3, 89, 42, 15];
-    let mayor = numeros[0];
-
-    for (let i = 1; i < numeros.length; i++) {
-      if (numeros[i] > mayor) {
-        mayor = numeros[i];
-      }
-      console.log(`Comparando: ${numeros[i]}, mayor hasta ahora: ${mayor}`);
-    }
-
-    document.write(`<br><br>El número más grande del array es: ${mayor}<br>`);
-
-    // ===Aqui el usuario ingresa los datos===
-    let cantidad = parseInt(prompt("¿Cuántos números vas a ingresar?"));
-let numeros1 = [];
-
-for (let i = 0; i < cantidad; i++) {
-  let numero = parseInt(prompt(`Ingresa el número #${i + 1}:`));
-  numeros1.push(numero); // Agregamos el número al array
-}
-
-let mayor1 = numeros1[0];
-
-for (let i = 1; i < numeros1.length; i++) {
-  if (numeros1[i] > mayor1) {
-    mayor1 = numeros1[i];
-  }
-}
-
-document.write(`<br>Los números que ingresaste son: ${numeros1.join(", ")}<br><br>`);
-document.write(`El número más grande que ingresaste es: ${mayor1}<br>`);
+    </ul>
+    </div>
+    <div class="olred">
+        <div id="prueba">
+            <ol>
+                <li>Trabajo en equipo</li>
+                <li>programacion en JAVA</li>
+                <li>Manejo de Microsoft Office</li>
+            </ol>
+        </div>
+    </div>
 
 
-  </script>
+    <h3>Mas sobre mi</h3>
+    <p>naci en el san fernando partido de tigre bla bla...si quieres saber mas sobre mi haz click <a
+            href="https://imgur.com/jTMTeGg" target="_blank"> aqui </a> </p>
 
+
+    <p>tambien puedes dirigirte a este link si te interesan los <a href="formulario.html">formularios.</a></p>
+
+    <div class="contenedor1"><h3>prueba de img</h3></div>
+    <div class="contenedor">
+        <img src="https://i.imgur.com/Z3OMhop.jpeg" alt="ups algo salio mal" class="posicion">
+    </div>
+    
+    <div class="centradoh3"><h3>¿necesitas audios divertidos?</h3></div>
+    <div class="pcenter"><p>aqui tienes uno de regalo</p></div>
+    <div class="contenedor2"><audio src="https://media.vocaroo.com/mp3/13VxuuoeG3q7" controls></audio></div>
+    
+    <div class="caja"><p>pincha <a href="https://www.myinstants.com/es/index/ar/" target="_blank">aqui</a> si quieres mas audios
+        divertidos</p></div>
+
+       <div class="contenedor3"> <img src="https://i.imgur.com/Z3OMhop.jpeg" alt="ups algo salio mal" class="posicion"></div>
 
 </body>
 
