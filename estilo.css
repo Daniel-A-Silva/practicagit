@@ -1,0 +1,49 @@
+.cuadrado {
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.5s ease , background-color 0.5s;
+
+}
+
+.cuadrado[data-color=blue]{
+  background-color: blue;
+}
+
+.cuadrado[data-color=green]{
+  background-color: green;
+}
+.cuadrado[data-color=red]{
+  background-color: red;
+}
+.cuadrado:hover {
+  transform: scale(0.5s);
+
+
+}
+
+
+button{
+  margin: 20px;
+  border-radius: 15px;
+  padding: 10px;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  
+}
+
+button:hover {
+  background-color: aqua;
+  
+}
+
+textarea{
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+}
