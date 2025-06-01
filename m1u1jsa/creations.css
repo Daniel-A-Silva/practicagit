@@ -1,0 +1,108 @@
+/* font-family: "Bebas Neue", sans-serif; */
+body {
+  background-image: url('imagenes/logo1.jpeg'); /* cambiá el nombre y ruta de la imagen */
+  background-size: cover; /* ajusta para cubrir toda la pantalla */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* el fondo se queda fijo mientras hacés scroll */
+  background-position: center;
+}
+
+
+
+footer {
+    background-color: lightgray;
+}
+
+h1 , h2 {
+font-family: "Bebas Neue", sans-serif;
+}
+
+.hero {
+    background: url(imagenes/logo1.jpeg) no-repeat center top;
+    background-size: 300px auto;
+    background-color: white;
+    padding: 100px;
+    min-height: 250px;
+    color: black;
+    text-align: center;
+    padding: 40px;
+    /* border-bottom: 4px solid #ff4081; línea para separar visualmente */
+    box-shadow: inset 0px -10px 20px rgba(0,0,0,0.1); /* un sombreado interno */
+}
+
+
+.instagram-logo-container {
+  display: flex;
+  align-items: flex-start;
+ 
+  gap: 10px;
+}
+.instagram-logo    {
+  width: 600px;
+  height: 60px;
+  background: url("imagenes/instagram-nuevo-icono.png") no-repeat center center;
+  background-size: contain;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: center;
+}
+.whatsapp-logo {
+  width: 650px;
+  height: 60px;
+  background: url("imagenes/logowhatsapp.png") no-repeat center center; /* <- esto cambia */
+  background-size: contain;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: center;
+}
+
+.whatsapp-logo:hover{
+  transform: scale(1.2);
+}
+.instagram-logo:hover {
+  transform: scale(1.2);
+}
+
+.algo {
+margin-left: 10px;
+width: 90px;
+}
+
+.img-cuadrada {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.img-zoom {
+  transition: transform 0.4s ease;
+}
+
+.zoom-container:hover .img-zoom {
+  transform: scale(1.3);
+}
+
+
+/* QUIÉNES SOMOS */
+.quienes-somos-section {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contenedor-centrado {
+  max-width: 600px;
+  background-color: rgb(177, 53, 53);
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
