@@ -5,6 +5,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; /* el fondo se queda fijo mientras hacés scroll */
   background-position: center;
+  
 }
 
 body {
@@ -34,6 +35,12 @@ font-family: "Bebas Neue", sans-serif;
     /* border-bottom: 4px solid #ff4081; línea para separar visualmente */
     box-shadow: inset 0px -10px 20px rgba(0,0,0,0.1); /* un sombreado interno */
 }
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+    background-size: 200px auto;
+  }
+}
 
 
 .instagram-logo-container {
@@ -42,22 +49,26 @@ font-family: "Bebas Neue", sans-serif;
  
   gap: 10px;
 }
-.instagram-logo    {
-  width: 600px;
-  height: 60px;
-  background: url("imagenes/instagram-nuevo-icono.png") no-repeat center center;
-  background-size: contain;
-  transition: transform 0.5s ease-in-out;
-  transform-origin: center;
-}
+.instagram-logo,
 .whatsapp-logo {
-  width: 650px;
+  width: 100%;
+  max-width: 300px;
   height: 60px;
-  background: url("imagenes/logowhatsapp.png") no-repeat center center; /* <- esto cambia */
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   transition: transform 0.4s ease-in-out;
-  transform-origin: center;
+  margin: 0 auto;
 }
+.instagram-logo {
+  background-image: url("imagenes/instagram-nuevo-icono.png");
+}
+
+.whatsapp-logo {
+  background-image: url("imagenes/logowhatsapp.png");
+}
+
+
 
 .whatsapp-logo:hover{
   transform: scale(1.2);
@@ -73,11 +84,11 @@ width: 90px;
 
 .img-cuadrada {
   width: 100%;
-  height: 500px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .zoom-container {
   overflow: hidden;
@@ -130,5 +141,45 @@ width: 90px;
   background-color: #000000;
   margin: 10px auto 0;
   border-radius: 2px;
+}
+
+
+/* Cards Cards */
+.card-img-top {
+  object-fit: cover;
+  height: 500px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+
+
+/* visitanos */
+
+.mapa iframe{
+
+  width: 100%;
+  aspect-ratio: 1.2;
+}
+
+
+
+
+/* contactanos */
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo negro con transparencia */
+  padding: 2rem;                        /* Relleno interno de 2 rems */
+  border-radius: 10px;                  /* Bordes redondeados */
+  color: white;                         /* Texto en blanco */
 }
 
