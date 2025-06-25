@@ -6,7 +6,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var contactoRouter = require('./routes/contacto.js');
+var contactanosRouter = require('./routes/contactanos');
+var visitanosRouter = require('./routes/visitanos');
+var quienesomosRouter = require('./routes/quienesomos');
+
+require('dotenv').config();
 
 var app = express();
 
@@ -22,21 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/contacto',contactoRouter)
-
-// ruta
-
-app.get('/prueba' , function (req , res){
-  res.send ('hola soy la pagina de prueba')
-})
-
-app.get('/visitanos' , function (req,res){
-  res.send ('Yo soy la  seccion de visitanos')
-})
-
-app.get ('/destacados', function (req,res){
-  res.send ('yo soy la seccion destacados')
-})
+app.use('/contactanos', contactanosRouter);
+app.use('/visitanos', visitanosRouter);
+app.use('/quienesomos', quienesomosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,6 +1,6 @@
 /* font-family: "Bebas Neue", sans-serif; */
 body {
-  background-image: url('imagenes/logo2.jpeg'); /* cambiá el nombre y ruta de la imagen */
+  background-image: url(../imagenes/logo2.jpeg); /* cambiá el nombre y ruta de la imagen */
   background-size: cover; /* ajusta para cubrir toda la pantalla */
   background-repeat: no-repeat;
   background-attachment: fixed; /* el fondo se queda fijo mientras hacés scroll */
@@ -24,7 +24,7 @@ font-family: "Bebas Neue", sans-serif;
 }
 
 .hero {
-    background: url(imagenes/logo1.png) no-repeat center top;
+    background: url(../imagenes/logo1.png) no-repeat center top;
     background-size: 300px auto;
     /* background-color: rgb(109, 24, 24); */
     padding: 100px;
@@ -61,11 +61,11 @@ font-family: "Bebas Neue", sans-serif;
   margin: 0 auto;
 }
 .instagram-logo {
-  background-image: url("imagenes/instagram-nuevo-icono.png");
+  background-image:url(../imagenes/instagram-nuevo-icono.png) ;
 }
 
 .whatsapp-logo {
-  background-image: url("imagenes/logowhatsapp.png");
+  background-image: url(../imagenes/logowhatsapp.png);
 }
 
 

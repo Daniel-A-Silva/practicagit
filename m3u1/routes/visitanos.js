@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('hola yo soy el formulario')
+  res.render('visitanos'); // o lo que quieras renderizar
 });
 
-module.exports = router;
+module.exports = router; // ✅ MUY IMPORTANTE
+
+
+
+
