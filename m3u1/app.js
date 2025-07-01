@@ -4,11 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var session = require('express-session');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var contactanosRouter = require('./routes/contactanos');
 var visitanosRouter = require('./routes/visitanos');
 var quienesomosRouter = require('./routes/quienesomos');
+const { title } = require('process');
 
 require('dotenv').config();
 
@@ -23,6 +26,35 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret:'123asd123asd123asd123asd',
+  resave: false,
+  saveUninitialized:true,
+}))
+
+
+app.get('/' , function (req,res){
+  var conocido = Boolean (req.session.nombre)
+
+  res.render('index', {
+    title:'Inicio de sesion en Franchu Creations',
+    conocido: conocido,
+    nombre: req.session.nombre
+  })
+})
+
+app.post('/ingresar', function(req,res){
+  if (req.body.nombre){
+    req.session.nombre = req.body.nombre 
+  }
+  res.redirect ('/'); 
+});
+
+app.get ('/salir', function (req, res){
+req.session.destroy ();
+res.redirect ('/');
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

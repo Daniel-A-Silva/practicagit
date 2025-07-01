@@ -183,3 +183,41 @@ width: 90px;
   color: white;                         /* Texto en blanco */
 }
 
+/* ----------------------- */
+/* ESTILO DE NAVBAR LOGIN */
+/* ----------------------- */
+
+.bg-navbar {
+  background-color: transparent/* negro semitransparente */
+}
+
+.navbar .nav-link {
+  color: #000000;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #ffc107; /* amarillo al pasar el mouse */
+}
+
+.navbar .btn-outline-light {
+  color: #000000;
+  border-color: #fff;
+}
+
+.navbar .btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.navbar .form-control {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* color nombre usuario login */
+
+.nombre-usuario {
+  color: #000000; /* por ejemplo, amarillo Bootstrap */
+  font-weight: bold;
+}
