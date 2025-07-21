@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config(); 
-var pool = require('./models/bd'); 
+var pool = require('./bd'); 
 
 
 var indexRouter = require('./routes/index');
@@ -25,32 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-//  select from mysql
-
-pool.query('select nombre ,telefono from empleados').then(function (resultados) {
+pool.query('select * from empleados').then(function (resultados) {
   console.log(resultados); 
 })
 .catch(function (error) {
   console.error('Error en la consulta:', error);
 });
-
-// INSERT MYSQL
-
-var obj = {
-  nombre: 'Juan ',
-  apellido: 'Perez',
-  telefono: '1234567890',
-  edad: 99,
-  email: 'juanperez@bignet.com'
-};
-
-pool.query('insert into empleados set ?', [obj]). then(function (resultados) {
-  console.log(resultados);
-})
-.catch(function (error) {
-  console.error('Error en la inserción:', error);
-}); 
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
