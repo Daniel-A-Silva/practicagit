@@ -1,0 +1,39 @@
+<section class="bg-overlay container my-5">
+  <h2 class="text-center mb-4">Contáctanos</h2>
+  <form id="contactForm" action="/contactanos" method="post">
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+    </div>
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Apellido" name="apellido" required>
+    </div>
+    <div class="mb-3">
+      <input type="email" class="form-control" placeholder="Email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Telefono" name="telefono" required>
+    </div>
+    <div class="mb-3">
+      <textarea class="form-control" rows="4" placeholder="Dejanos tu mensaje" name="dejamensaje" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Enviar</button>
+  </form>
+  {{message}}
+  <div id="mensajeEnviado" style="display: none;" class="alert alert-success mt-3 text-center fw-bold"></div>
+  <script>
+  const form = document.getElementById('contactForm');
+  const mensajeDiv = document.getElementById('mensajeEnviado');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log("El botón fue presionado");
+
+    mensajeDiv.innerHTML = "✅ Tu mensaje ha sido enviado exitosamente.<br>¡Gracias por confiar en Franchu Creations!";
+    mensajeDiv.style.display = "block";
+    form.reset();
+
+    setTimeout(() => {
+      mensajeDiv.style.display = "none";
+    }, 6000);
+  });
+</script>
