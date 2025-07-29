@@ -4,11 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config(); 
-var pool = require('./models/bd'); 
+var pool = require('./models/bd');  
 
 
 var indexRouter = require('./routes/index');
+var visitanosRouter = require('./routes/visitanos');
+var contactanosRouter = require('./routes/contactanos');
+var quienesomosRouter = require('./routes/quienesomos');
+
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/admin/login');
+var adminrouter = require('./routes/admin/novedades');
+var session = require('express-session');
 
 var app = express();
 
@@ -21,9 +28,36 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'asdf', // puede ser cualquier string único
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use('/admin/login', loginRouter);
+
+
+
+secured = async (req, res, next) => {
+  try {
+    if (req.session.id_usuario) { 
+      next();
+    } else {
+      res.redirect('/admin/login');
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect('/admin/login');
+  }
+};  
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/visitanos', visitanosRouter);
+app.use('/contactanos', contactanosRouter);
+app.use('/quienesomos', quienesomosRouter);
+
+
+app.use('/admin/novedades',secured , adminrouter);
 
 //  select from mysql
 
@@ -68,4 +102,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = app , secured;
