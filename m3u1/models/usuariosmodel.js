@@ -1,16 +1,19 @@
-var pool = require('./bd');
-var md5 = require('md5');
+const pool = require('./bd'); // conexión a MySQL
+const bcrypt = require('bcrypt');
 
-async function getUserAndPassword(user, password) {
+async function getUserByUsername(username) {
     try {
-        var query = 'SELECT * FROM usuarios WHERE usuario = ? AND password = ? LIMIT 1';
-        var rows = await pool.query(query, [user,password]);
-        console.log("Consulta a DB con:", user, md5(password), "Resultado:", rows);
-        return rows[0]; // Retorna el primer usuario encontrado
+        const query = "SELECT * FROM usuarios WHERE usuario = ?";
+        const rows = await pool.query(query, [username]);
+        return rows[0]; // devuelve el usuario (si existe)
     } catch (error) {
-        console.log('Error en usuariosModel:', error);
         throw error;
     }
 }
-module.exports = {
-    getUserAndPassword  }
+
+// compara la contraseña ingresada con la guardada encriptada
+async function validatePassword(passwordIngresada, passwordGuardada) {
+    return bcrypt.compare(passwordIngresada, passwordGuardada);
+}
+
+module.exports = { getUserByUsername, validatePassword };

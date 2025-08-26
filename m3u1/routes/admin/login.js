@@ -1,48 +1,57 @@
-var express = require('express');
-var router = express.Router();
-var usuariosModel = require('../../models/usuariosmodel');
-const md5 = require('md5');
+const express = require('express');
+const router = express.Router();
+const usuariosModel = require('../../models/usuariosmodel');
 
-// Muestra el formulario
-router.get('/', async function(req, res, next) {
-    res.render('admin/login', {});
+// GET - muestra el formulario de login
+router.get('/', function (req, res, next) {
+    res.render('admin/login', {
+        layout: 'admin/layout'
+    });
 });
 
-// Procesa login
+// POST - procesa login
 router.post('/', async (req, res, next) => {
     try {
-        const usuario = req.body.usuario;
-        const password = md5(req.body.password);
+        const { usuario, password } = req.body;
+        const user = await usuariosModel.getUserByUsername(usuario);
 
-        const data = await usuariosModel.getUserAndPassword(usuario, password);
+        if (user) {
+            const passwordOK = await usuariosModel.validatePassword(password, user.password);
 
-        if (data) {
-            req.session.id_usuario = data.id;
-            req.session.nombre = data.usuario;
-            res.redirect('/admin/novedades');
+            if (passwordOK) {
+                // guardar sesión
+                req.session.id_usuario = user.id;
+                req.session.nombre = user.usuario;
+
+                res.redirect('/admin/productos'); // redirige al panel de productos
+            } else {
+                res.render('admin/login', {
+                    layout: 'admin/layout',
+                    error: true,
+                    message: 'Usuario o contraseña incorrectos'
+                });
+            }
         } else {
             res.render('admin/login', {
                 layout: 'admin/layout',
-                error: true
+                error: true,
+                message: 'Usuario o contraseña incorrectos'
             });
         }
     } catch (error) {
-        console.error('Error en POST /login:', error);
+        console.log(error);
         res.render('admin/login', {
             layout: 'admin/layout',
-            error: true
+            error: true,
+            message: 'Error interno en el login'
         });
     }
 });
 
-// ✅ Cerrar sesión (logout)
-router.get('/logout', async function(req, res, next) {
-    req.session.destroy(() => {
-        res.render('admin/login', {
-            layout: 'admin/layout',
-            logout: true
-        });
-    });
+// logout
+router.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.redirect('/admin/login');
 });
 
 module.exports = router;
